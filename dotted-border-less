@@ -1,0 +1,15 @@
+.dottedBorder(@mode: horizontal, @position: bottom, @color: fade(@color-primary, 50%), @spacing: 3px, @size: 1px) { 
+  & when (@mode = horizontal) {
+  	background-image: linear-gradient(to right, @color (@size/@spacing) * 100%, rgba(255,255,255,0) 0%);
+  	background-repeat: repeat-x;
+  	background-size: @spacing @size;
+  }
+
+  & when (@mode = vertical) {
+  	background-image: linear-gradient(to bottom, @color (@size/@spacing) * 100%, rgba(255,255,255,0) 0%);
+  	background-repeat: repeat-y;
+  	background-size: @size @spacing;
+  }
+     
+  background-position: @position;
+}
